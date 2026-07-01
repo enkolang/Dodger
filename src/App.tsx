@@ -1327,13 +1327,12 @@ export default function App() {
 };
 
   const triggerRedCaptureOutcome = () => {
-    if (controlledColor === "red") {
-      setEventPrompt("Red captured green.");
-      appendLog("Red captured green.");
-      startWinCountdown();
-      turnLockRef.current = false;
-      return;
-    }
+  if (controlledColor === "red") {
+    setEventPrompt("Survivor was captured by the player.");
+    startWinCountdown("Survivor was captured by the player.");
+    turnLockRef.current = false;
+    return;
+  }
 
     setGameOver(true);
     setEventPrompt("Game over. Enemy captured the player.");
